@@ -49,7 +49,7 @@ ul li{list-style: none;}
 .mobile-nav .drop-down ul {display: none;overflow: hidden;}
 .mobile-nav .drop-down li {padding-left: 20px;}
 .mobile-nav-toggle {position: fixed;right: 0;top: 0;z-index: 9998;border: 0;background: none;font-size: 24px;transition: all 0.4s;outline: none !important;line-height: 1;cursor: pointer;text-align: right;}
-.mobile-nav-toggle i {margin: 25px 18px 0 0;color: #004289;}
+.mobile-nav-toggle i {margin: 32px 18px 0 0;color: #004289;font-size: 30px;}
 .mobile-nav-overly {width: 100%;height: 100%;z-index: 9997;top: 0;left: 0;position: fixed;background: rgba(19, 39, 57, 0.8);overflow: hidden;display: none;}
 .mobile-nav-active {overflow: hidden;}
 .mobile-nav-active .mobile-nav {left: 0;}
@@ -155,9 +155,11 @@ section {overflow: hidden;}
 #footer .footer-top .social-links a {font-size: 26px;display: inline-block;color: #009ee3;line-height: 1;padding: 0 0;margin-right: 10px;text-align: center;width: 36px;height: 36px;transition: 0.3s;/* border: 1px solid #fff; */}
 #footer .footer-top .social-links a:hover {background: #2f2483;color: #fff;}
 #footer .footer-top .social-links span{display: block;margin-top: 20px;margin-bottom: 30px;}
+#footer .footer-top .social-links span img{width: 80%;}
 #footer .footer-top .certified span img{border-radius: 10px;width: 100%;}
 #footer .footer-top h4 {font-size: 14px;font-weight: bold;color: #fff;text-transform: uppercase;position: relative;padding-bottom: 10px;font-family: "Raleway", sans-serif;}
 #footer .footer-top h4:before{content: "";position: absolute;display: block;width: 90px;height: 3px;background: #009ee3;bottom: -2px;left: 0;}
+#footer .footer-top .social-links{text-align: center;}
 #footer .footer-top .footer-links p{color: #fff;font-size: 14px;line-height: 28px;font-family: "Montserrat", sans-serif;}
 #footer .footer-top .footer-links ul {list-style: none;padding: 0;margin: 0;}
 #footer .footer-top .footer-links ul li {padding: 8px 0;}
@@ -201,7 +203,7 @@ section {overflow: hidden;}
 
 
 .inner-page {padding-top: 75px;padding-bottom: 80px;background-size: cover;}
-.inner-page h2 {font-family: "Raleway", sans-serif;color: #fff;margin: 0;padding: 0;font-size: 46px; font-weight: 600;text-transform: uppercase;}
+.inner-page h2 {font-family: "Raleway", sans-serif;color: #fff;margin: 0;padding: 0;font-size: 40px; font-weight: 600;text-transform: uppercase;}
 
 .inner-about{background: #13314c url(../img/banner-bg.jpg) center center no-repeat;}
 .about-page{padding: 30px 0;}
@@ -221,8 +223,11 @@ section {overflow: hidden;}
 .products-listing .content h4{margin-bottom: 0; padding-top: 10px; font-size: 18px;font-family: "Raleway", sans-serif; font-weight: 600;}
 
 @media(max-width:767px){
-  .hero_slider {padding-top: 72px;}
-  .hero_slider .swiper-slide{height: 500px;}
+  body{padding-top: 75px;}
+  #header{height: 90px;}
+  #header .logo img{max-height: 90px;}
+  /* .hero_slider {padding-top: 72px;} */
+  .hero_slider .swiper-slide{height: 220px;}
   .hero_slider .swiper-button-next, .hero_slider .swiper-button-prev{display: none;}
   .hero_cont .card{border-right: none;border-bottom: 1px solid #2f2483;}
   .section-hero{padding: 120px 0 40px 0;}
@@ -231,7 +236,10 @@ section {overflow: hidden;}
   .header-top-bar{display: none;}
   .allproducts .product-text .product_btn{margin-bottom: 15px;margin-right: 0;}
   .enquiry .enquiry-text{display: inline-block;}
-  .enquiry .enquiry-text h2{margin-bottom: 20px;}
+  .enquiry .enquiry-text h2{margin-bottom: 20px; letter-spacing: 3px;}
+  .enquiry:after{background: #180d6c;}
+  #footer{text-align: center;}
+  #footer .footer-top .social-links span img{width: 70%;}
   #footer .footer-top{background: none;}
   #footer .footer-top h4:before{width: 100%;}
   .footer-links{margin-bottom: 20px;}
