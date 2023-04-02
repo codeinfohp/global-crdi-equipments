@@ -148,6 +148,7 @@ section {overflow: hidden;}
 .contact  input[type="submit"]:hover {background: #e3000f;cursor: pointer;color: #fff;}
 @-webkit-keyframes animate-loading {0% {transform: rotate(0deg);}100% {transform: rotate(360deg);}}
 @keyframes animate-loading {0% {transform: rotate(0deg);}100% {transform: rotate(360deg);}}
+.contact .thanksmsg{padding: 10px 0; text-align: center; color:#e3000f; font-weight: 600; display: block; font-style: italic;}
 
 
 /*---# Footer---*/

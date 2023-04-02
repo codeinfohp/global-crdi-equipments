@@ -96,62 +96,66 @@
 
           <div class="col-lg-6">
             <div class="form" data-aos="fade-left">
-              <form  name="submit-to-google-sheet">
+              <form name="submit-to-google-sheet">
                 <div class="form-group">
-                  <input type="text" name="first name" class="form-control" id="first-name" placeholder="First Name*" />
+                  <input type="text" name="First Name" autocomplete="off" class="form-control" id="first-name" placeholder="First Name*"  required/>
                   <div class="validate"></div>
                 </div>
 
                 <div class="form-group">
-                  <input type="text" name="last name" class="form-control" id="last-name" placeholder="Last Name*" />
+                  <input type="text" name="Last Name" class="form-control" autocomplete="off" id="last-name" placeholder="Last Name*" required />
                   <div class="validate"></div>
                 </div>
 
                 <div class="form-group">
-                  <input type="text" class="form-control" name="email" id="email" placeholder="Email* " />
+                  <input type="text" class="form-control" name="Email" autocomplete="off" id="email" placeholder="Email* " required />
                   <div class="validate"></div>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone*" />
+                  <input type="text" class="form-control" name="Phone" autocomplete="off" id="phone" placeholder="Phone*"  required/>
                   <div class="validate"></div>
                 </div>
                 <div class="form-group">
-                  <textarea class="form-control" name="message" rows="5" placeholder="Message"></textarea>
+                  <textarea class="form-control" name="Message" rows="5" autocomplete="off" placeholder="Message"></textarea>
                   <div class="validate"></div>
                 </div>
                 <div class="text-center">
-                  <input type="submit" name="Send Message" id="Send" placeholder="Send Message" />
+                  <input type="submit" name="Send Message" id="Send" placeholder="Send Message"  required/>
+                </div>
+                <div class="text-center">
+                  <span class="thanksmsg" id="msg"></span>
                 </div>
               </form>
+              
             </div>
+            <script>
+              const scriptURL = 'https://script.google.com/macros/s/AKfycbydwa7TUB3ueMfsIT4NZHbh47vfrSbPkhjB8KIZnSjSGy18aiTSgIDhC_oNY-SSVqGe/exec'
+              const form = document.forms['submit-to-google-sheet']
+              const msg = document.getElementById('msg')
+            
+              form.addEventListener('submit', e => {
+                e.preventDefault()
+                alert('Your Massage has been sent successfully!');
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                  .then(response => {
+                    msg.innerHTML = "Thanks for your massage!"
+                    setTimeout(function(){
+                      msg.innerHTML  = ""
+
+                    }, 5000)
+                    form.reset()
+
+                  })
+                  .catch(error => console.error('Error!', error.message))
+              })
+            </script>
           </div>
 
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
-    <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycby7NQNgpqU-ITo8Cu0qM_LtSnSNwzA84ER4vI-91_SJTUOMqnohiWYXD8dgv7YW_aw/exec'
-      const form = document.forms['submit-to-google-sheet']
+    </section>
     
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => console.log('Success!', response))
-          .catch(error => console.error('Error!', error.message))
-      })
-    </script>
-    <!-- <script>
-			const scriptURL = 'https://script.google.com/macros/s/AKfycby7NQNgpqU-ITo8Cu0qM_LtSnSNwzA84ER4vI-91_SJTUOMqnohiWYXD8dgv7YW_aw/exec'
-			const form = document.forms['formName']
-			form.addEventListener('submit', e => {
-			  e.preventDefault()
-			  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-				.then(response => alert("Thank you! your form is submitted successfully." ))
-				.then(() => {  window.location.reload(); })
-				.catch(error => console.error('Error!', error.message))
-			})
-		  </script> -->
  
 
     <section class="map">
